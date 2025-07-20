@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Escolha o objetivo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/plano.css') }}">
+   <div class="logo">
+    <a href="{{ url_for('agua.index') }}">
+        <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="logo">
+    </a>
+</div>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="titulo">Qual o seu objetivo principal?</h1>
+
+    <form action="" method="post" class="form-objetivo">
+      <label class="opcao">
+        <input type="radio" name="objetivo" value="emagrecer" required> Emagrecer
+      </label>
+      <label class="opcao">
+        <input type="radio" name="objetivo" value="ganhar_massa"> Ganhar massa
+      </label>
+      <button type="submit" class="btn-enviar">Próximo →</button>
+    </form>
+    <form action="{{ url_for('plano.escolher_objetivo') }}" method="post">
+
+  </div>
+
+</body>
+</html>

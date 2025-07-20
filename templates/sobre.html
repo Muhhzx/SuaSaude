@@ -1,0 +1,39 @@
+    <head>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
+       <div class="logo">
+    <a href="{{ url_for('agua.index') }}">
+        <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="logo">
+    </a>
+</div>
+
+    </head>
+
+    <h2 class="mt-4 text-success">Objetivos do Projeto</h2>
+    <ul>
+      <li>Promover a adoção de hábitos saudáveis através da tecnologia.</li>
+      <li>Oferecer uma ferramenta simples e acessível para o controle diário da ingestão de água.</li>
+      <li>Personalizar a experiência do usuário com base em seus objetivos individuais.</li>
+      <li>Incentivar a construção de rotinas sustentáveis para melhoria da qualidade de vida.</li>
+    </ul>
+
+    <h2 class="mt-4 text-success">Impacto Esperado</h2>
+    <p>Com o avanço das tecnologias e o aumento da conscientização sobre a importância do autocuidado, ferramentas digitais como o <strong>Sua Saúde +</strong> têm um papel fundamental em apoiar usuários a manterem constância em hábitos simples, porém essenciais. Espera-se que o sistema contribua para a formação de uma rotina mais saudável e organizada, ajudando na prevenção de problemas relacionados à desidratação e estimulando a construção de novos hábitos positivos.</p>
+
+    <h2 class="mt-4 text-success">Próximos Passos</h2>
+    <ul>
+      <li>Integração com banco de dados para salvar o progresso de forma persistente.</li>
+      <li>Criação de gráficos estatísticos para visualização de desempenho ao longo do tempo.</li>
+      <li>Expansão das funcionalidades com o acompanhamento de alimentação e atividades físicas.</li>
+      <li>Implementação de gamificação para engajar o usuário com recompensas simbólicas.</li>
+    </ul>
+
+    <p class="mt-4"><strong>Sua Saúde +</strong> é mais do que um projeto acadêmico: é uma proposta de transformação digital voltada para o bem-estar. Através de uma interface leve, moderna e funcional, buscamos mostrar como a tecnologia pode ser uma aliada poderosa na busca por mais saúde, equilíbrio e qualidade de vida.</p>
+
+    <div class="text-center mt-4">
+      <a href="{{ url_for('agua.index') }}" class="btn btn-success">Voltar para o Início</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

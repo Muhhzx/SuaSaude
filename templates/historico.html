@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Consumo de Água</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+     <div class="logo">
+    <a href="{{ url_for('agua.index') }}">
+        <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="logo">
+    </a>
+</div>
+
+    <div class="historico">
+        <h1>Histórico de Consumo de Água</h1>
+
+        <div class="section">
+            <h2>Resumo Diário</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Total Consumido (mL)</th>
+                        <th>Meta (mL)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in historico %}
+                    <tr>
+                        <td>{{ item.data.strftime('%d/%m/%Y') }}</td>
+                        <td>{{ item.total_consumido }}</td>
+                        <td>{% if item.meta %}{{ item.meta }}{% else %}Não definida{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Consumos Detalhados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Quantidade (mL)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consumo in consumos %}
+                    <tr>
+                        <td>{{ consumo.data.strftime('%d/%m/%Y') }}</td>
+                        <td>{{ consumo.quantidade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Metas Detalhadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Meta (mL)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for meta in metas %}
+                    <tr>
+                        <td>{{ meta.data.strftime('%d/%m/%Y') }}</td>
+                        <td>{{ meta.meta }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a href="{{ url_for('agua.index') }}" class="btn-voltar">Voltar</a>
+    </div>
+</body>
+</html>

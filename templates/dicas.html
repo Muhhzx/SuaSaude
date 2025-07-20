@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Suas Dicas</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dicas.css') }}">
+</head>
+<body>
+
+  <div class="logo">
+    <a href="{{ url_for('agua.index') }}">
+        <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="logo">
+    </a>
+</div>
+
+
+  <div class="dicas"><h1>Essas são suas dicas, {{ nome }}:</h1>
+  <ul>
+    {% for dica in dicas %}
+      <li>{{ dica }}</li>
+    {% endfor %}
+  </ul></div>
+</body>
+</html>

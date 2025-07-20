@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Seu Roteiro para o corpo do sonhos</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Roteiro para {{objetivo}}</h1>
+        {% for categoria, dicas in plano.items() %}
+         <h2>{{ categoria }}</h2>
+      <ul>
+        {% for dica in dicas %}
+          <li>{{ dica }}</li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+    <a href="/" class="btn-voltar-index">Voltar</a>
+  </div>
+</body>
+</html>
+ 

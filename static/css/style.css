@@ -1,0 +1,237 @@
+/* Estilo geral do body e containers */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #b8b5b5;
+    color: #004d40;
+    margin: 0;
+    padding: 80px 20px 20px 20px; /* padding-top aumentado para navbar */
+}
+
+.container, .agua-container {
+    max-width: 480px;
+    margin: 0 auto 2rem auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalhos */
+h1, h2 {
+    text-align: center;
+}
+
+/* Formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+select, input[type="number"], button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1.5px solid #00796b;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="number"]:focus {
+    border-color: #004d40;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Barra de progresso */
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 25px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #f0f4f8;
+    color: #333;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 25px;
+    transition: width 0.5s ease-in-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Botões históricos */
+.btn-historico {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #3182ce;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-historico:hover {
+    background: #2b6cb0;
+}
+
+/* Estilo da página de histórico */
+.historico .container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.historico h1, 
+.historico h2 {
+    color: #2c7a7b;
+    margin-bottom: 20px;
+}
+
+.historico table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 40px;
+}
+
+.historico th, 
+.historico td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.historico th {
+    background-color: #2c7a7b;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.historico tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.historico .btn-voltar {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #3182ce;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.historico .btn-voltar:hover {
+    background: #2b6cb0;
+}
+
+.historico .section {
+    margin-bottom: 50px;
+}
+
+/* Navbar customizada */
+.custom-navbar {
+    background-color: #b8b5b5 !important;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+    color: #000 !important;
+    font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #333 !important;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 8px;
+}
+
+/* Logo navbar */
+.logo-navbar {
+    width: 50px;
+    height: auto;
+}
+
+/* Logo */
+.logo {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.logo img {
+    width: 120px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 470px) {
+    .container, .agua-container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    select, input[type="number"], button {
+        width: 100%;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+}
+
+/* Botões adicionais */
+.btn-voltar-index {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #3182ce;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-voltar-index:hover {
+    background: #2b6cb0;
+}
+
+.btn-objetivo {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2b6cb0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}

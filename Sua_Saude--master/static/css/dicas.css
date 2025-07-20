@@ -1,0 +1,57 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #b8b5b5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo fixada no canto superior com tamanho padrão */
+.logo {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+.logo img {
+  width: 120px;
+}
+
+/* Estilo da seção de dicas */
+.dicas {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.dicas h1 {
+  font-size: 1.6rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.dicas ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.dicas li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 470px) {
+  .dicas {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .logo img {
+    width: 90px;
+  }
+}

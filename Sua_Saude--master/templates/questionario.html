@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Questionário físico</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/plano.css') }}">
+</head>
+<body>
+
+    <div class="logo">
+    <a href="{{ url_for('agua.index') }}">
+        <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="logo">
+    </a>
+</div>
+
+  <div class="container">
+    <h1 class="titulo">Informe seus dados:</h1>
+
+    <form action="{{ url_for('plano.questionario') }}" method="post" class="form-objetivo">
+
+      <label for="nome" class="opcao">Seu nome:</label>
+      <input type="text" name="nome" id="nome" class="campo-nome" required><br><br>
+
+      <label for="idade" class="opcao">Sua idade:</label>
+      <input type="number" name="idade" id="idade" class="campo-idade" min="10" max="120" required><br><br>
+
+      <label for="nivel_atividade" class="opcao">Nível de atividade física:</label>
+      <select name="nivel_atividade" id="nivel_atividade" class="campo-atividade" required>
+        <option value="" disabled selected>Selecione</option>
+        <option value="baixo">Baixo (sedentário)</option>
+        <option value="moderado">Moderado</option>
+        <option value="alto">Alto (treinos intensos)</option>
+      </select>
+
+      <br><br>
+      <button type="submit" class="btn-enviar">Próximo →</button>
+    </form>
+  </div>
+
+</body>
+</html>

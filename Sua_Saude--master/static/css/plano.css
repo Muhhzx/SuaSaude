@@ -1,0 +1,88 @@
+@media (max-width: 470px) {
+    /* Container ocupa quase toda a largura, com padding mantido */
+    .container, .agua-container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Inputs, selects e botões com largura 100% para encaixar no container */
+    select, input[type="number"], button {
+        width: 100%;
+    }
+    
+    /* Logo um pouco menor */
+    .logo img {
+        width: 90px;
+    }}
+
+
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #b8b5b5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.titulo {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.form-objetivo {
+  background-color: #ffffff;
+  padding: 32px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.opcao {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.opcao input {
+  margin-right: 8px;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  background-color: #005fa3;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #00457d;
+}
+
+.logo {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.logo img{
+    width: 120px;
+}

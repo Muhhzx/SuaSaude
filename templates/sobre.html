@@ -1,39 +1,87 @@
-    <head>
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
-       <div class="logo">
-    <a href="{{ url_for('agua.index') }}">
-        <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="logo">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Sua Saúde +</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='css/img/sua_saude.png') }}" type="image/png">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('agua.index') }}">
+      <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="Logo" class="logo-navbar" height="40">
+      <span class="fw-bold">Sua Saúde +</span>
     </a>
-</div>
 
-    </head>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <h2 class="mt-4 text-success">Objetivos do Projeto</h2>
-    <ul>
-      <li>Promover a adoção de hábitos saudáveis através da tecnologia.</li>
-      <li>Oferecer uma ferramenta simples e acessível para o controle diário da ingestão de água.</li>
-      <li>Personalizar a experiência do usuário com base em seus objetivos individuais.</li>
-      <li>Incentivar a construção de rotinas sustentáveis para melhoria da qualidade de vida.</li>
-    </ul>
-
-    <h2 class="mt-4 text-success">Impacto Esperado</h2>
-    <p>Com o avanço das tecnologias e o aumento da conscientização sobre a importância do autocuidado, ferramentas digitais como o <strong>Sua Saúde +</strong> têm um papel fundamental em apoiar usuários a manterem constância em hábitos simples, porém essenciais. Espera-se que o sistema contribua para a formação de uma rotina mais saudável e organizada, ajudando na prevenção de problemas relacionados à desidratação e estimulando a construção de novos hábitos positivos.</p>
-
-    <h2 class="mt-4 text-success">Próximos Passos</h2>
-    <ul>
-      <li>Integração com banco de dados para salvar o progresso de forma persistente.</li>
-      <li>Criação de gráficos estatísticos para visualização de desempenho ao longo do tempo.</li>
-      <li>Expansão das funcionalidades com o acompanhamento de alimentação e atividades físicas.</li>
-      <li>Implementação de gamificação para engajar o usuário com recompensas simbólicas.</li>
-    </ul>
-
-    <p class="mt-4"><strong>Sua Saúde +</strong> é mais do que um projeto acadêmico: é uma proposta de transformação digital voltada para o bem-estar. Através de uma interface leve, moderna e funcional, buscamos mostrar como a tecnologia pode ser uma aliada poderosa na busca por mais saúde, equilíbrio e qualidade de vida.</p>
-
-    <div class="text-center mt-4">
-      <a href="{{ url_for('agua.index') }}" class="btn btn-success">Voltar para o Início</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item mx-2"><a class="nav-link" href="{{ url_for('plano.escolher_objetivo') }}">Dicas</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="{{ url_for('agua.historico') }}">Histórico</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="{{ url_for('imc') }}">IMC</a></li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Conteúdo -->
+<main class="container">
+  <h1>Sobre o Projeto</h1>
+
+  <div class="section-icon">
+    <img src="{{ url_for('static', filename='img/icon-alvo.png') }}" alt="Objetivo">
+    <span>Objetivos do Projeto</span>
+  </div>
+  <ul>
+    <li>Promover a adoção de hábitos saudáveis através da tecnologia.</li>
+    <li>Oferecer uma ferramenta simples e acessível para o controle diário da ingestão de água.</li>
+    <li>Personalizar a experiência do usuário com base em seus objetivos individuais.</li>
+    <li>Incentivar rotinas sustentáveis para melhoria da qualidade de vida.</li>
+  </ul>
+
+  <div class="section-icon">
+    <img src="{{ url_for('static', filename='img/icon-impacto.png') }}" alt="Impacto">
+    <span>Impacto Esperado</span>
+  </div>
+  <p>
+    Com o avanço das tecnologias e o aumento da conscientização sobre o autocuidado, ferramentas como o <strong>Sua Saúde +</strong> desempenham um papel fundamental no auxílio à construção de hábitos saudáveis. Espera-se que o sistema ajude na prevenção de problemas relacionados à desidratação e incentive a adoção de práticas de bem-estar.
+  </p>
+
+  <div class="section-icon">
+    <img src="{{ url_for('static', filename='img/icon-futuro.png') }}" alt="Futuro">
+    <span>Próximos Passos</span>
+  </div>
+  <ul>
+    <li>Integração com banco de dados para salvar progresso do usuário.</li>
+    <li>Criação de gráficos estatísticos para visualização do desempenho.</li>
+    <li>Expansão com acompanhamento de alimentação e atividades físicas.</li>
+    <li>Gamificação para engajar usuários com recompensas simbólicas.</li>
+  </ul>
+
+  <p class="mt-4">
+    <strong>Sua Saúde +</strong> é mais que um projeto acadêmico: é uma proposta de transformação digital voltada para o bem-estar. Acreditamos que a tecnologia pode ser uma aliada poderosa na busca por saúde, equilíbrio e qualidade de vida.
+  </p>
+
+  <div class="text-center mt-4">
+    <a href="{{ url_for('agua.index') }}" class="btn">Voltar para o Início</a>
+  </div>
+</main>
+
+<!-- Scripts Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,62 +1,60 @@
+/* Reset básico */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #b8b5b5;
   color: #004d40;
   margin: 0;
-  padding: 0;
+  padding-top: 80px;
 }
 
-/* Container com animação suave */
+/* Container principal */
 .container {
-  max-width: 900px;
-  background-color: white;
-  padding: 50px 40px;
-  border-radius: 16px;
-  margin: 60px auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  animation: fadeIn 1s ease-in-out;
+  max-width: 960px;
+  background-color: #fff;
+  padding: 40px 30px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Animação */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Título principal */
 h1 {
   text-align: center;
   color: #2c7a7b;
   font-weight: 800;
-  margin-bottom: 30px;
   font-size: 2.2rem;
+  margin-bottom: 30px;
   position: relative;
 }
 
 h1::after {
   content: '';
   display: block;
-  width: 80px;
+  width: 60px;
   height: 4px;
   background-color: #2c7a7b;
   margin: 10px auto 0;
   border-radius: 2px;
 }
 
+/* Títulos de seção */
 h2 {
   color: #2c7a7b;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-weight: 700;
 }
 
+/* Parágrafos e listas */
 p, li {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #333;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 25px;
   margin-bottom: 25px;
 }
 
@@ -64,79 +62,94 @@ li::marker {
   color: #2c7a7b;
 }
 
+/* Seções com ícone */
 .section-icon {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
-  font-weight: bold;
   font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 30px;
+  color: #2c7a7b;
 }
 
 .section-icon img {
   width: 28px;
+  height: 28px;
 }
 
-/* Botão */
+/* Botão de voltar */
 .btn {
   display: inline-block;
-  padding: 12px 28px;
-  background: #2c7a7b;
+  background-color: #2c7a7b;
   color: white;
   font-weight: bold;
-  border-radius: 10px;
+  padding: 12px 28px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
   margin-top: 40px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  background: #235f5f;
+  background-color: #235f5f;
   transform: scale(1.05);
 }
 
-/* Navbar */
+/* Navbar personalizada (caso não esteja em outro CSS) */
 .custom-navbar {
-  background-color: #b8b5b5 !important;
-  padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: #b8b5b5 !important;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.custom-navbar .navbar-brand,
-.custom-navbar .nav-link {
-  color: #000 !important;
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+    color: #000 !important;
+    font-weight: 500;
 }
 
 .custom-navbar .nav-link:hover {
-  color: #333 !important;
+    color: #333 !important;
 }
 
 .custom-navbar .navbar-brand img {
   width: 50px;
 }
 
-/* Responsivo */
+/* Logo no topo (se estiver usando fora da navbar) */
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 120px;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   .container {
     padding: 30px 20px;
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .section-icon {
     font-size: 1rem;
   }
-}
-
-.logo {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  z-index: 100;
-}
-
-.logo img {
-  width: 120px;
 }

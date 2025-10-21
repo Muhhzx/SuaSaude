@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular IMC - Sua Saúde +</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imc.css') }}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='css/img/sua_saude.png') }}" type="image/png">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top bg-light">
+  <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('agua.index') }}">
+      <img src="{{ url_for('static', filename='css/img/sua_saude.png') }}" alt="Logo" class="logo-navbar" height="32">
+      <span class="fw-bold">Sua Saúde +</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="{{ url_for('plano.escolher_objetivo') }}">Dicas</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="{{ url_for('agua.historico') }}">Histórico</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="{{ url_for('sobre') }}">Sobre</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Conteúdo principal -->
+<main class="container mt-5 pt-5">
+  <section class="card p-4 shadow-sm">
+    <h2 class="mb-4 text-center">Calcule seu IMC</h2>
+
+    <!-- Exibe erros -->
+    {% if erro %}
+      <div class="alert alert-danger" role="alert">
+        {{ erro }}
+      </div>
+    {% endif %}
+
+    <!-- Formulário -->
+    <form method="POST" action="/imc">
+      <div class="mb-3">
+        <label for="peso" class="form-label">Peso (kg):</label>
+        <input type="number" step="0.1" name="peso" id="peso" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="altura" class="form-label">Altura:</label>
+        <div class="input-group">
+          <input type="number" step="0.01" name="altura" id="altura" class="form-control" placeholder="Ex: 1.75 ou 175" required>
+          <select name="unidade_altura" class="form-select">
+              <option value="m">metros</option>
+              <option value="cm">centímetros</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Calcular</button>
+    </form>
+
+    <!-- Resultado -->
+    {% if resultado %}
+      <div class="resultado {{ classe_css }} mt-4 p-3 rounded">
+        <h5 class="mb-3">Seu Resultado:</h5>
+        <p><strong>IMC:</strong> {{ resultado.imc }}</p>
+        <p><strong>Classificação:</strong> {{ resultado.classificacao }}</p>
+        <p><strong>Dica:</strong> {{ resultado.dica }}</p>
+      </div>
+    {% endif %}
+  </section>
+</main>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

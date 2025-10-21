@@ -85,9 +85,9 @@ def historico():
        meta = metas_dict.get(data)
        historico.append({
            'data': data,
-           'total_consumido' : total_consumido,
+           'total_consumido': total_consumido,
            'meta': meta
        })
 
-       consumos = ConsumoAgua.query.order_by(ConsumoAgua.data.desc()).all()
-       return render_template('historico.html', historico = historico, consumos=consumos, metas=metas)
+   consumos = ConsumoAgua.query.order_by(ConsumoAgua.data.desc()).all()
+   return render_template('historico.html', historico=historico, consumos=consumos, metas=metas)

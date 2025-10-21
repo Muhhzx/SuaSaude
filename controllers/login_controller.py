@@ -38,3 +38,8 @@ def register():
             flash('Usuário já existe')
        else:
            user = User (username=username)
+           user.set_password(password)
+           db.session.add(user)
+           db.session.commit()
+           flash('Usuário criado com sucesso, muito obrigado por se registrar')
+           return redirect(url_for('auth.login'))

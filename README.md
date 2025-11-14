@@ -1,9 +1,9 @@
-## SuaSaúde.
+## SuaSaúde  
 [![GitHub repo](https://img.shields.io/badge/GitHub-SuaSaude-blue?style=flat-square)](https://github.com/Muhhzx/SuaSaude)  
 [![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square)](https://www.python.org/)  
 [![Flask](https://img.shields.io/badge/Flask-2.3-lightgrey?style=flat-square)](https://flask.palletsprojects.com/)  
 
-#**SuaSaúde** é um aplicativo de monitoramento de saúde que ajuda os usuários a gerenciar **hidratação, metas de água, IMC e dicas de nutrição**, oferecendo uma interface simples e intuitiva.  
+**SuaSaúde** é um aplicativo de monitoramento de saúde que ajuda os usuários a gerenciar **hidratação, metas de água, IMC e dicas de nutrição**, oferecendo uma interface simples e intuitiva.  
 
 Este projeto é ideal para **portfólio**, demonstrando habilidades em **desenvolvimento full-stack com Flask e front-end tradicional (HTML + CSS)**.
 

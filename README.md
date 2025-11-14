@@ -5,8 +5,6 @@
 
 **SuaSaúde** é um aplicativo de monitoramento de saúde que ajuda os usuários a gerenciar **hidratação, metas de água, IMC e dicas de nutrição**, oferecendo uma interface simples e intuitiva.  
 
-Este projeto é ideal para **portfólio**, demonstrando habilidades em **desenvolvimento full-stack com Flask e front-end tradicional (HTML + CSS)**.
-
 ---
 
 ## 🌟 Funcionalidades Principais
